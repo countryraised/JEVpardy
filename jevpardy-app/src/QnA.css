@@ -20,7 +20,11 @@ footer{
     height: 50vw;
     border-radius: 10% / 50% ;
 }
-
+.instructions {
+    color: white;
+    font-weight: bold;
+    font-size: 2.5vw;
+}
 .question{
 
     font-size: 4vw;
@@ -64,7 +68,7 @@ footer{
     display: inline-flex;
     justify-content: space-between;
     width: 90vw;
-    padding: 5vw;
+    padding: 1vw;
     font-size: 3vw;
 }
 button.right {

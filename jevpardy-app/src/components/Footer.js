@@ -6,7 +6,7 @@ function Footer(props) {
     console.log(props.playerOne)
     return(
         <div className="playerOne">
-           Player 1 
+           Score 
            <div>
            <input className="playerOneScore" type="integer" value={props.playerOne} />
                

@@ -39,6 +39,8 @@ render(){
 
     return(
       <div> 
+           <div className="gameboard" >Let's play JEVpardy!</div>
+
         <div className='board'>
             {this.props.apiDataLoaded ?
                 <div className='gbcontainer'>
@@ -111,6 +113,10 @@ render(){
                         : <a><div className='blueTv' key={question.id} >{question.value}</div></a>}</div>)}
                         </div>
 
+                        {/* <div className='colFive'>
+                            {catFive.map(question => <div className='box'>{this.onClick ? <Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} >{question.value}</div></Link> : <a><div className='blueTv' key={question.id} >{question.value}</div></a>}</div>)}
+                        </div> */}
+
                     </div>
                         
                 </div>
@@ -118,7 +124,7 @@ render(){
 
             </div>             
             <div className="playerOne">
-                Player 1 
+                Score 
                 <div>
                 <input className="playerOneScore" type="integer" value={this.props.playerOne} />
                     

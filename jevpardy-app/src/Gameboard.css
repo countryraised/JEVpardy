@@ -1,8 +1,16 @@
 
+.gameboard {
+    padding: 2vw;
+    color: rgb(12, 26, 195);
+    background-color: grey;
+    font-size: 5vw;
+    text-shadow: 3px 3px rgb(219, 219, 113);
+}
+
 .board {
     display: flex;
     justify-content: center;    
-    background-color: gray;    
+  
 }
 
 .gbcontainer {
@@ -13,7 +21,6 @@
     display: flex;  
      
 }
-
 
 .catbox {
     border:gray solid 3px;

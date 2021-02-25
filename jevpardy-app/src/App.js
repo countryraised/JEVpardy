@@ -36,11 +36,7 @@ class App extends Component {
     const jevArray= await axios.get('http://jservice.io/api/clues')
     // console.log(jevArray.data[0].question)
     const questionList = jevArray.data.filter(ques => ques.value != null)
-    console.log(jevArray.data);
-    console.log(questionList);
-
-    // const catArray = questionList.findUnique(cate => cate.category_id);
-    //  console.log(catArray);
+  
     
      this.setState({
         questions: questionList,
