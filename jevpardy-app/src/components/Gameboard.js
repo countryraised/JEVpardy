@@ -9,16 +9,18 @@ class Gameboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            clicked: false
+            onValue: 0
         }
     }
     
-    onClick = (event) => {
-       event.preventDefault() 
+    // onClick = (event) => {
+    //    const onValue = event.target.value
+    //    this.setState({onValue})
    
-      }
+    //   }
 
 render(){
+
     const catOne = this.props.questions.filter(question => question.category_id === this.props.questions[0].category_id);{
     console.log(catOne)}
 
@@ -36,7 +38,7 @@ render(){
 
     const quesArray = [catOne, catTwo, catThree, catFour, catFive]
         console.log(quesArray);
-
+console.log(this.props.num)
     return(
       <div> 
            <div className="gameboard" >Let's play JEVpardy!</div>
@@ -97,11 +99,13 @@ render(){
                         </div>
 
                         <div className='colTwo'>
-                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`} onLoad={(event) => event.preventDefault()} ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
+                            {catTwo.map(question =>  <div className='box'><Link to={`/QnA/${question.id}`} ><div className='blueTv' key={question.id} >{(question.value)-(this.props.num)}</div></Link></div>,
+                            console.log(this.props.num)) 
+                            }
                         </div>
 
                         <div className='colThree'>
-                            {catThree.map(question => <div className='box'><Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
+                            {catThree.map(question => <div className='box'><Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} >{(question.value)}</div></Link></div>)}
                         </div>
 
                         <div className='colFour'>

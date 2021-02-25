@@ -18,17 +18,19 @@ class App extends Component {
       playerOne : null,
       playerTwo : null,
       playerThree : null,
-      num:null
+      num:0
     }
   }
   addScore = (num) => {
 
-    this.setState(
+    this.setState(    
+      {num : num},
       {playerOne: this.state.playerOne + num});
   }
   subtractScore = (num) => {
 
     this.setState(
+      {num : num},
       {playerOne: this.state.playerOne - num});
 
   }
