@@ -38,9 +38,8 @@ function QnA(props){
             </div>
           </div>
           <div className="answerButtons">
-               <Link className="bLink"  to="/gameboard">
-              <button className="right" onClick={() =>props.addScore(foundQuestion.value)}>I got it RIGHT!
-              </button>
+               <Link className="bLink" to="/gameboard">
+              <button className="right" onClick={() =>props.addScore(foundQuestion.value)}>I got it RIGHT!</button>
                 </Link>
                 <div className="playerOne">
                 Score
