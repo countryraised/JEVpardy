@@ -14,10 +14,8 @@ class Gameboard extends Component {
     }
     
     onClick = (event) => {
-        
-        this.setState({
-          clicked: null // toggled on the first click
-        })
+       event.preventDefault() 
+   
       }
 
 render(){
@@ -97,7 +95,7 @@ render(){
                         </div>
 
                         <div className='colTwo'>
-                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`} onClick={!this.clicked ? this.onClick : null} ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
+                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`} onClick={this.onClick} ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
                         </div>
 
                         <div className='colThree'>
