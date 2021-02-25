@@ -1,24 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
 import Footer from './Footer';
 import '../Gameboard.css'
 
-function Gameboard(props){
+class Gameboard extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false
+        }
+    }
+    
+    onClick = (event) => {
+        
+        this.setState({
+          clicked: null // toggled on the first click
+        })
+      }
 
-    const catOne = props.questions.filter(question => question.category_id === props.questions[0].category_id);{
+render(){
+    const catOne = this.props.questions.filter(question => question.category_id === this.props.questions[0].category_id);{
     console.log(catOne)}
 
-    const catTwo = props.questions.filter(question => question.category_id === props.questions[30].category_id);{
+    const catTwo = this.props.questions.filter(question => question.category_id === this.props.questions[30].category_id);{
         console.log(catTwo)}
         
-    const catThree = props.questions.filter(question => question.category_id === props.questions[28].category_id);{
+    const catThree = this.props.questions.filter(question => question.category_id === this.props.questions[28].category_id);{
         console.log(catThree)}
 
-    const catFour = props.questions.filter(question => question.category_id === props.questions[3].category_id);{
+    const catFour = this.props.questions.filter(question => question.category_id === this.props.questions[3].category_id);{
         console.log(catFour)}
 
-    const catFive = props.questions.filter(question => question.category_id === props.questions[55].category_id);{
+    const catFive = this.props.questions.filter(question => question.category_id === this.props.questions[55].category_id);{
         console.log(catFive)}
 
     const quesArray = [catOne, catTwo, catThree, catFour, catFive]
@@ -27,7 +42,7 @@ function Gameboard(props){
     return(
       <div> 
         <div className='board'>
-            {props.apiDataLoaded ?
+            {this.props.apiDataLoaded ?
                 <div className='gbcontainer'>
                     {/* <div > */}
                         
@@ -82,7 +97,7 @@ function Gameboard(props){
                         </div>
 
                         <div className='colTwo'>
-                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
+                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`} onClick={!this.clicked ? this.onClick : null} ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
                         </div>
 
                         <div className='colThree'>
@@ -93,8 +108,9 @@ function Gameboard(props){
                             {catFour.map(question => <div className='box'><Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
                         </div>
 
-                        <div className='colFive'>
-                            {catFive.map(question => <div className='box'><Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
+                        <div className='colFive'>                         
+                        {catFive.map(question => <div className='box'>{!this.clicked ? <Link to={`/QnA/${question.id}`}  ><div className='blueTv' key={question.id} onClick={this.onClick}>{question.value}</div></Link> 
+                        : <a><div className='blueTv' key={question.id} >{question.value}</div></a>}</div>)}
                         </div>
 
                     </div>
@@ -106,12 +122,13 @@ function Gameboard(props){
             <div className="playerOne">
                 Player 1 
                 <div>
-                <input className="playerOneScore" type="integer" value={props.playerOne} />
+                <input className="playerOneScore" type="integer" value={this.props.playerOne} />
                     
                 </div>
             </div>
         </div>
     )
+}
 }
 
 export default Gameboard;
