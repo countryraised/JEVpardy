@@ -48,16 +48,12 @@ footer{
     0% {
       opacity: 0;
     }
-  
     50% {
       opacity: 0
     }
-  
     100% {
       opacity:0;
-    
     }
-
 }
 .redirect {
     background: ghostwhite;
@@ -71,7 +67,9 @@ footer{
     padding: 1vw;
     font-size: 3vw;
 }
+
 button.right {
+
     border:gray solid 2px;
     background: green;
     font-weight: 600;
@@ -80,7 +78,9 @@ button.right {
     padding: 1vw;
     font-size: 3vw;
 }
+
 button.wrong {
+    
     border:gray solid 2px;
     background: red;
     font-weight: 600;
@@ -88,5 +88,9 @@ button.wrong {
     border-radius: 3px;
     padding: 1vw;
     font-size: 3vw;
+}
+
+a.bLink {
+    height: 6vw;
 }
 

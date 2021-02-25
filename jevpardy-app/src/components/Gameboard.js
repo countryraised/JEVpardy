@@ -97,7 +97,7 @@ render(){
                         </div>
 
                         <div className='colTwo'>
-                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`} onClick={this.onClick} ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
+                            {catTwo.map(question => <div className='box'><Link to={`/QnA/${question.id}`} onLoad={(event) => event.preventDefault()} ><div className='blueTv' key={question.id} >{question.value}</div></Link></div>)}
                         </div>
 
                         <div className='colThree'>

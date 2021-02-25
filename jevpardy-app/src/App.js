@@ -61,6 +61,7 @@ class App extends Component {
               playerOne={this.state.playerOne}
               playerTwo={this.state.playerTwo}
               playerThree={this.state.playerThree}
+              num={this.state.num}
               />
             )}
             />
